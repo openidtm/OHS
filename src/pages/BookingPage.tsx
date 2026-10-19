@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState, Fragment } from 'react';
 import { useApp } from '../context/AppContext';
 import { appointmentTypes, timeSlots, mockDoctors } from '../data/mockData';
 import { Calendar, Clock, User, FileText, CheckCircle, ArrowRight } from 'lucide-react';
@@ -70,14 +70,14 @@ export default function BookingPage() {
         {/* Progress Steps */}
         <div className="flex items-center justify-center mb-10">
           {[1, 2, 3].map((s) => (
-            <React.Fragment key={s}>
+            <Fragment key={s}>
               <div className={`flex items-center justify-center w-10 h-10 rounded-full font-semibold text-sm ${
                 step >= s ? 'bg-teal-600 text-white' : 'bg-gray-200 text-gray-500'
               }`}>
                 {s}
               </div>
               {s < 3 && <div className={`w-16 h-1 mx-1 rounded ${step > s ? 'bg-teal-600' : 'bg-gray-200'}`} />}
-            </React.Fragment>
+            </Fragment>
           ))}
         </div>
 
